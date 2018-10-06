@@ -16,7 +16,10 @@ def cleanFile(file_name):
 	#Write into clean file in /CLEANED folder
 	curr_directory = os.getcwd()
 	clean_directory = curr_directory + "/CLEANED"
-	os.mkdir(clean_directory)
+	clean_directory_exists = os.path.isdir(clean_directory)
+	
+	if not clean_directory_exists:
+		os.mkdir(clean_directory)
 
 	clean_file_name = clean_directory + "/[CLEANED] " + file_name
 	clean_file = open(clean_file_name, "w")
