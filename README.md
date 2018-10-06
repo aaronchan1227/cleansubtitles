@@ -6,4 +6,4 @@ This is a simple script to strip a .txt file of any HTML tags. Run the following
 
 `python3 cleansubtitles name_of_file.txt`
 
-Cleaned files will be stored in /CLEANED sub directory. 
+Cleaned files will be stored in the /CLEANED sub directory. 
