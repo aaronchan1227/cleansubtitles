@@ -2,7 +2,6 @@
 ## Written for IND ENG 135, Fall 2018, UC Berkeley
 ## Team: The Jokestor
 
-
 from bs4 import BeautifulSoup
 import argparse
 
