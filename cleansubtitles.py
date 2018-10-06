@@ -4,6 +4,7 @@
 
 from bs4 import BeautifulSoup
 import argparse
+import os
 
 def cleanFile(file_name):
 	#Reading dirty file
@@ -12,8 +13,12 @@ def cleanFile(file_name):
 	soup = BeautifulSoup(dirty_text, "lxml")
 	dirty_file.close()
 
-	#Write into clean file
-	clean_file_name = "[CLEANED] " + file_name
+	#Write into clean file in /CLEANED folder
+	curr_directory = os.getcwd()
+	clean_directory = curr_directory + "/CLEANED"
+	os.mkdir(clean_directory)
+
+	clean_file_name = clean_directory + "/[CLEANED] " + file_name
 	clean_file = open(clean_file_name, "w")
 	clean_file.write(soup.get_text())
 	clean_file.close()
